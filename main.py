@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 def main():
     book_path = "books/frankenstein.txt"
     book_contents = get_book_contents(book_path)
@@ -15,6 +17,7 @@ def print_report(book_path, word_count, char_list):
         print(f"The '{entry[1]}' character was found {entry[0]} times")
     print("--- End report ---")
 
+
 def get_sorted_char_list(char_dict):
     char_list = []
     for k, v in char_dict.items():
@@ -22,10 +25,9 @@ def get_sorted_char_list(char_dict):
             char_entry = (v, k)
             char_list.append(char_entry)
 
-    char_list.sort(reverse=True)         
+    char_list.sort(reverse=True)
     return char_list
 
-    
 
 def get_word_count(book_contents):
     words = book_contents.split()
@@ -47,5 +49,6 @@ def get_book_contents(book_path):
     with open(book_path) as f:
         file_contents = f.read()
     return file_contents
+
 
 main()
